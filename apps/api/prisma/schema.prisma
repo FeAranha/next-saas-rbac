@@ -30,6 +30,7 @@ enum TokenType {
   PASSWORD_RECOVER
 }
 
+// token for password reset, or other signed url
 model Token {
   id        String    @id @default(uuid())
   type      TokenType
