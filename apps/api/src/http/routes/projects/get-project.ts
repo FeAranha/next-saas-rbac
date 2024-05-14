@@ -30,7 +30,7 @@ export async function getProject(app: FastifyInstance) {
                 description: z.string(),
                 name: z.string(),
                 slug: z.string(),
-                avatarUrl: z.string().nullable(),
+                avatarUrl: z.string().url().nullable(),
                 organizationId: z.string().uuid(),
                 ownerId: z.string().uuid(),
                 owner: z.object({
@@ -48,10 +48,19 @@ export async function getProject(app: FastifyInstance) {
         const userId = await request.getCurrentUserId()
         const { organization, membership } =
           await request.getUserMembership(orgSlug)
-
         const { cannot } = getUserPermissions(userId, membership.role)
-
+        // DEBUG User Permissions
+        console.log('User Permissions=>', {
+          userId,
+          membershipRole: membership.role,
+          cannotResult: cannot('get', 'Project'),
+        })
         if (cannot('get', 'Project')) {
+          // DEBUG User is not allowed to get project
+          console.log(
+            'Unauthorized: User is not allowed to get project. cannot=>',
+            cannot,
+          )
           throw new UnauthorizedError(
             `You're not allowed to see this projects.`,
           )
