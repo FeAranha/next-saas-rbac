@@ -35,6 +35,7 @@ import { getProjects } from '@/http/routes/projects/get-projects'
 import { updateProject } from '@/http/routes/projects/update-project'
 
 import { createAccount } from './routes/auth/create-account'
+import { acceptInvite } from './routes/invites/accept-invite'
 import { getInvites } from './routes/invites/get-invites'
 import { createOrganization } from './routes/orgs/create-organization'
 
@@ -103,6 +104,7 @@ app.register(removeMember)
 app.register(createInvite)
 app.register(getInvite)
 app.register(getInvites)
+app.register(acceptInvite)
 
 app.listen({ port: env.SERVER_PORT }).then(() => {
   console.log('HTTP server running!')
