@@ -1,3 +1,13 @@
+# Setup
+
+```npm i```
+
+```docker compose up -d```
+
+```cd apps/web && npm run dev```
+
+```cd apps/api && npm run dev```
+
 # Next.js SaaS + RBAC
 
 This project contains all the necessary boilerplate to setup a multi-tenant SaaS with Next.js including authentication and RBAC authorization.
