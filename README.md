@@ -4,9 +4,7 @@
 
 ```docker compose up -d```
 
-```cd apps/web && npm run dev```
-
-```cd apps/api && npm run dev```
+```npm run dev```
 
 # Next.js SaaS + RBAC
 
