@@ -43,7 +43,7 @@ export async function getProfile(app: FastifyInstance) {
             id: userId,
           },
         })
-        console.log({ user })
+
         if (!user) {
           throw new BadRequestError('User not found.')
         }
