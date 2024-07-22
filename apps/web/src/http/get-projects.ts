@@ -19,6 +19,9 @@ interface GetProjectsResponse {
 }
 
 export async function getProjects(org: string) {
+  // timeOut get projects
+  await new Promise((resolve) => setTimeout(resolve, 2000))
+
   const result = await api
     .get(`organizations/${org}/projects`)
     .json<GetProjectsResponse>()
