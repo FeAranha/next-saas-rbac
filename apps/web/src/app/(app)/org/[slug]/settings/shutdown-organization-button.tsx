@@ -17,6 +17,7 @@ export function ShutdownOrganizationButton() {
   }
 
   return (
+    // TODO alert confirm shutdownOrg */}
     <form action={shutdownOrganizationAction}>
       <Button type="submit" variant="destructive" className="w-56">
         <XCircle className="mr-2 size-4" />
