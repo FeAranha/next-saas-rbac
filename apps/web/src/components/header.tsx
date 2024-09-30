@@ -1,6 +1,7 @@
 import { Slash } from 'lucide-react'
+import Image from 'next/image'
 
-import RocketseatIcon from '@/assets/rocketseat-icon.svg'
+import rocketseatIcon from '@/assets/rocketseat-icon.svg'
 import { ability } from '@/auth/auth'
 
 import { OrganizationSwitcher } from './organization-switcher'
@@ -16,7 +17,7 @@ export async function Header() {
   return (
     <div className="mx-auto flex max-w-[1200px] items-center justify-between">
       <div className="flex items-center gap-3">
-        <RocketseatIcon className="size-6 dark:invert" />
+        <Image src={rocketseatIcon} className="size-6 dark:invert" alt="" />
 
         <Slash className="size-3 -rotate-[24deg] text-border" />
 
